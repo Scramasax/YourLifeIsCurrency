@@ -171,6 +171,17 @@
     <Compile Include="Assets\Scripts\artiMechStates\aMechCube\cubeStart_To_cubeUpThrust.cs" />
     <Compile Include="Assets\Scripts\artiMechStates\aMechCube\cubeUpThrust.cs" />
     <Compile Include="Assets\Scripts\artiMechStates\aMechCube\cubeUpThrust_To_cubeNoThrust.cs" />
+    <Compile Include="Assets\Scripts\artiMechStates\aMechPlayerController\aMechPlayerController.cs" />
+    <Compile Include="Assets\Scripts\artiMechStates\aMechPlayerController\playerControllerAttack.cs" />
+    <Compile Include="Assets\Scripts\artiMechStates\aMechPlayerController\playerControllerAttack_To_playerControllerUpdate.cs" />
+    <Compile Include="Assets\Scripts\artiMechStates\aMechPlayerController\playerControllerIdle.cs" />
+    <Compile Include="Assets\Scripts\artiMechStates\aMechPlayerController\playerControllerIdle_To_playerControllerAttack.cs" />
+    <Compile Include="Assets\Scripts\artiMechStates\aMechPlayerController\playerControllerIdle_To_playerControllerUpdate.cs" />
+    <Compile Include="Assets\Scripts\artiMechStates\aMechPlayerController\playerControllerStart.cs" />
+    <Compile Include="Assets\Scripts\artiMechStates\aMechPlayerController\playerControllerStart_To_playerControllerUpdate.cs" />
+    <Compile Include="Assets\Scripts\artiMechStates\aMechPlayerController\playerControllerUpdate.cs" />
+    <Compile Include="Assets\Scripts\artiMechStates\aMechPlayerController\playerControllerUpdate_To_playerControllerAttack.cs" />
+    <Compile Include="Assets\Scripts\artiMechStates\aMechPlayerController\playerControllerUpdate_To_playerControllerIdle.cs" />
     <Compile Include="Assets\Scripts\artiMechStates\aMechThirdPersonCam\aMechThirdPersonCam.cs" />
     <Compile Include="Assets\Scripts\artiMechStates\aMechThirdPersonCam\camStart.cs" />
     <Compile Include="Assets\Scripts\artiMechStates\aMechThirdPersonCam\camStart_To_camUpdate.cs" />
