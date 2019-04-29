@@ -39,6 +39,10 @@ namespace Artimech
         public float m_FollowToGoalCamVel = 5.0f;
         public AnimationCurve m_FollowToGoalCamApproachCure;
 
+        [Header("Mouse cam move")]
+        public float m_CamRotationVelX = 3.0f;
+        public float m_CamRotationVelY = 3.0f;
+
 
         new void Awake()
         {

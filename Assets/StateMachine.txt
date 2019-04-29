@@ -1,1 +1,1 @@
-aMechPlayerController,PlayerController
+aMechdemonstick,demonstick

@@ -47,7 +47,7 @@ namespace Artimech
 {
     public class camUpdate : stateGameBase
     {
-
+        Vector3 m_CamOffset;
         /// <summary>
         /// State constructor.
         /// </summary>
@@ -62,6 +62,7 @@ namespace Artimech
         /// </summary>
         public override void Update()
         {
+            //UpdateCameraRotation();
             base.Update();
         }
 
@@ -70,6 +71,7 @@ namespace Artimech
         /// </summary>
         public override void FixedUpdate()
         {
+            UpdateCameraRotation();
             FixedUpdateTarget();
             FixedUpdateCamera();
             base.FixedUpdate();
@@ -122,6 +124,21 @@ namespace Artimech
             camScript.transform.LookAt(camScript.m_TargetFollow.transform);
         }
 
+        /*
+        offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * turnSpeed, Vector3.right) * offset;
+        transform.position = player.position + offset;
+        transform.LookAt(player.position);
+         */
+        void UpdateCameraRotation()
+        {
+            if (Input.GetMouseButton(1))
+            {
+                aMechThirdPersonCam camScript = StateGameObject.GetComponent<aMechThirdPersonCam>();
+                camScript.m_CameraGoal.transform.RotateAround(camScript.m_TargetGoal.transform.position, Vector3.up, Time.deltaTime * Input.GetAxis("Mouse X") * camScript.m_CamRotationVelX);
+                camScript.m_CameraGoal.transform.RotateAround(camScript.m_TargetGoal.transform.position, Vector3.left, Time.deltaTime * Input.GetAxis("Mouse Y") * camScript.m_CamRotationVelY);
+            }
+        }
+
         /// <summary>
         /// For updateing the unity gui.
         /// </summary>
@@ -135,6 +152,8 @@ namespace Artimech
         /// </summary>
         public override void Enter()
         {
+            aMechThirdPersonCam camScript = StateGameObject.GetComponent<aMechThirdPersonCam>();
+            //Cursor.visible = false;
             base.Enter();
         }
 
