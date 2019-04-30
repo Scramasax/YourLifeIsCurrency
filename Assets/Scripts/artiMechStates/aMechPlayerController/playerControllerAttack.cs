@@ -88,7 +88,11 @@ namespace Artimech
         public override void Enter()
         {
             Animator animator = this.StateGameObject.GetComponent<Animator>();
-            animator.SetBool("Attack",true);
+            animator.SetBool("Attack", true);
+            aMechPlayerController player = StateGameObject.GetComponent<aMechPlayerController>();
+            player.LifePercent -= player.m_PercentPerFlight;
+            if (player.LifePercent < 0)
+                player.LifePercent = 0;
             base.Enter();
         }
 

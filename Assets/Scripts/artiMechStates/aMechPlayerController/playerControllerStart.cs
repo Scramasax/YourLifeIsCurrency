@@ -87,6 +87,8 @@ namespace Artimech
         /// </summary>
         public override void Enter()
         {
+            AudioSource sound = StateGameObject.GetComponent<AudioSource>();
+            sound.Play();
             base.Enter();
         }
 

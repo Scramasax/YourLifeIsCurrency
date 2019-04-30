@@ -33,10 +33,10 @@ using System.Collections.Generic;
   <State>
     <alias>aiDemonStart</alias>
     <comment></comment>
-    <posX>20</posX>
-    <posY>40</posY>
-    <sizeX>150</sizeX>
-    <sizeY>80</sizeY>
+    <posX>55</posX>
+    <posY>44</posY>
+    <sizeX>122</sizeX>
+    <sizeY>52</sizeY>
   </State>
 </stateMetaData>
 

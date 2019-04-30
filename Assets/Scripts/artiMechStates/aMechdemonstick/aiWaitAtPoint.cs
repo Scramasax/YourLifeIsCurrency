@@ -33,10 +33,10 @@ using System.Collections.Generic;
   <State>
     <alias>aiWaitAtPoint</alias>
     <comment></comment>
-    <posX>403</posX>
-    <posY>251</posY>
-    <sizeX>150</sizeX>
-    <sizeY>80</sizeY>
+    <posX>503</posX>
+    <posY>34</posY>
+    <sizeX>167</sizeX>
+    <sizeY>57</sizeY>
   </State>
 </stateMetaData>
 
@@ -54,6 +54,7 @@ namespace Artimech
         public aiWaitAtPoint(GameObject gameobject) : base (gameobject)
         {
             //<ArtiMechConditions>
+            m_ConditionalList.Add(new aiWaitAtPoint_To_aiDemonDying("aiDemonDying"));
             m_ConditionalList.Add(new aiWaitAtPoint_To_aiDemonMoveToNextPatroPoint("aiDemonMoveToNextPatroPoint"));
         }
 

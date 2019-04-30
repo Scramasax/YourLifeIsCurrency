@@ -34,10 +34,10 @@ using UnityEngine.AI;
   <State>
     <alias>Move To Patrol Point</alias>
     <comment></comment>
-    <posX>267</posX>
-    <posY>39</posY>
+    <posX>250</posX>
+    <posY>54</posY>
     <sizeX>150</sizeX>
-    <sizeY>80</sizeY>
+    <sizeY>51</sizeY>
   </State>
 </stateMetaData>
 
@@ -56,6 +56,7 @@ namespace Artimech
         public aiDemonMoveToNextPatroPoint(GameObject gameobject) : base (gameobject)
         {
             //<ArtiMechConditions>
+            m_ConditionalList.Add(new aiDemonMoveToNextPatroPoint_To_aiDemonDying("aiDemonDying"));
             m_ConditionalList.Add(new aiDemonMoveToNextPatroPoint_To_aiWaitAtPoint("aiWaitAtPoint"));
             m_ConditionalList.Add(new aiDemonMoveToNextPatroPoint_To_aiSurpise("aiSurpise"));
         }
@@ -67,7 +68,10 @@ namespace Artimech
         {
             aMechdemonstick ai = StateGameObject.GetComponent<aMechdemonstick>();
             NavMeshAgent agent = StateGameObject.GetComponent<NavMeshAgent>();
+            agent.isStopped = false;
+            agent.speed = ai.m_WalkSpeed;
             agent.SetDestination(ai.m_PatrolPoints[ai.CurrentPatrolIndex].transform.position);
+
             //agent.SetDestination(ai.m_Target.transform.position);
             base.Update();
         }

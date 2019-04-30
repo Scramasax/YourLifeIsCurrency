@@ -29,8 +29,16 @@ namespace Artimech
         int m_CurrentPatrolIndex = -1;
         public aMechvisioncone m_VisionCone;
         public float m_SurpiseTime = 1.5f;
-
-
+        public float m_DieTime = 2.0f;
+        public float m_WalkSpeed = 0.4f;
+        public float m_RunSpeed = 1.0f;
+        public float m_JumpAttackDist = 5.0f;
+        public float m_AfterJumpAttackTimeLimit = 3.0f;
+        public GameObject m_CoinPrefab;
+        public int m_MinCoins = 5;
+        public int m_MaxCoins = 10;
+        public float m_AttackDamage = 25.0f;
+        public float m_AttackDistance = 3.5f;
 
         public int CurrentPatrolIndex { get => m_CurrentPatrolIndex; set => m_CurrentPatrolIndex = value; }
 
@@ -66,6 +74,10 @@ namespace Artimech
             m_CurrentState = AddState(new aiDemonStart(this.gameObject), "aiDemonStart");
 
             //<ArtiMechStates>
+            AddState(new aiDemonDead(this.gameObject), "aiDemonDead");
+            AddState(new aiDemonDying(this.gameObject), "aiDemonDying");
+            AddState(new aiDemonAfterAttack(this.gameObject), "aiDemonAfterAttack");
+            AddState(new aiDemonAttack(this.gameObject), "aiDemonAttack");
             AddState(new aiDemonChase(this.gameObject), "aiDemonChase");
             AddState(new aiWaitAtPoint(this.gameObject), "aiWaitAtPoint");
             AddState(new aiSurpise(this.gameObject), "aiSurpise");

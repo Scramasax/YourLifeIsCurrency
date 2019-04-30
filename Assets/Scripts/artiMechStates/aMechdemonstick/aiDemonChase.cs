@@ -19,6 +19,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.AI;
 
 #region XML_DATA
 
@@ -33,10 +34,10 @@ using System.Collections.Generic;
   <State>
     <alias>aiDemonChase</alias>
     <comment></comment>
-    <posX>116</posX>
-    <posY>428</posY>
-    <sizeX>150</sizeX>
-    <sizeY>80</sizeY>
+    <posX>104</posX>
+    <posY>366</posY>
+    <sizeX>147</sizeX>
+    <sizeY>43</sizeY>
   </State>
 </stateMetaData>
 
@@ -55,6 +56,8 @@ namespace Artimech
         public aiDemonChase(GameObject gameobject) : base (gameobject)
         {
             //<ArtiMechConditions>
+            m_ConditionalList.Add(new aiDemonChase_To_aiDemonDying("aiDemonDying"));
+            m_ConditionalList.Add(new aiDemonChase_To_aiDemonAttack("aiDemonAttack"));
         }
 
         /// <summary>
@@ -62,6 +65,11 @@ namespace Artimech
         /// </summary>
         public override void Update()
         {
+            aMechdemonstick ai = StateGameObject.GetComponent<aMechdemonstick>();
+            NavMeshAgent agent = StateGameObject.GetComponent<NavMeshAgent>();
+            agent.speed = ai.m_RunSpeed;
+            agent.isStopped = false;
+            agent.SetDestination(ai.m_Target.transform.position);
             base.Update();
         }
 
@@ -86,6 +94,8 @@ namespace Artimech
         /// </summary>
         public override void Enter()
         {
+            Animator animator = StateGameObject.GetComponent<Animator>();
+            animator.SetTrigger("SurpriseIsOver");
             base.Enter();
         }
 

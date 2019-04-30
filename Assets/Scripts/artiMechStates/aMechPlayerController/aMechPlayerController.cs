@@ -24,6 +24,14 @@ namespace Artimech
     public class aMechPlayerController : stateMachineGame
     {
         public float m_SpecialIdleTimeLimit = 6.0f;
+        public float m_AttackRadius = 4.0f;
+        public float m_PercentPerFlight = 10;
+        int m_NumGold = 1;
+        float m_LifePercent = 100;
+
+        public int NumGold { get => m_NumGold; set => m_NumGold = value; }
+        public float LifePercent { get => m_LifePercent; set => m_LifePercent = value; }
+
         new void Awake()
         {
             base.Awake();

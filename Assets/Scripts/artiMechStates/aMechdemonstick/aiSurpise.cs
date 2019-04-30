@@ -34,10 +34,10 @@ using UnityEngine.AI;
   <State>
     <alias>aiSurpise</alias>
     <comment></comment>
-    <posX>111</posX>
-    <posY>240</posY>
-    <sizeX>150</sizeX>
-    <sizeY>80</sizeY>
+    <posX>48</posX>
+    <posY>192</posY>
+    <sizeX>134</sizeX>
+    <sizeY>36</sizeY>
   </State>
 </stateMetaData>
 
@@ -56,6 +56,7 @@ namespace Artimech
         public aiSurpise(GameObject gameobject) : base (gameobject)
         {
             //<ArtiMechConditions>
+            m_ConditionalList.Add(new aiSurpise_To_aiDemonDying("aiDemonDying"));
             m_ConditionalList.Add(new aiSurpise_To_aiDemonChase("aiDemonChase"));
         }
 

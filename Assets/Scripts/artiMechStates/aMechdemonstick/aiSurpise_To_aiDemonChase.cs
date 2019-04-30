@@ -55,7 +55,7 @@ namespace Artimech
             stateGameBase gameState = (stateGameBase)state;
             aMechdemonstick ai = gameState.StateGameObject.GetComponent<aMechdemonstick>();
 
-            if (gameState.StateTime > ai.m_SurpiseTime)
+            if (gameState.StateTime > ai.m_DieTime)
                 return m_ChangeStateName;
 
             return null;
