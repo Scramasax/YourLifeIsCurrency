@@ -93,6 +93,7 @@ namespace Artimech
                 Vector3 spawnPosOffset = utlMath.RandomVector(new Vector3(-1, -1, -1), new Vector3(1, 1, 1));
                 GameObject coinClone = GameObject.Instantiate(ai.m_CoinPrefab, ai.transform.position + new Vector3(0, 10.0f, 0) + spawnPosOffset, Quaternion.identity);
             }
+            aMechSimMgr.Inst.EnemyList.Remove(ai);
             base.Enter();
         }
 

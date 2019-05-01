@@ -25,9 +25,19 @@ namespace Artimech
     public class aMechSimMgr : stateMachineGame
     {
         public aMechPlayerController m_PlayerController;
+
         public string m_LevelLoose;
+        public string m_WinLevel;
+
         public GameObject m_LooseText;
-      
+        public GameObject m_YouKilledAllText;
+        public GameObject m_CollectAllCoinsText;
+        public GameObject m_YouWinText;
+        public GameObject m_CollectTimeText;
+
+        public float m_KillAllTextTimeLimit = 1.5f;
+        public float m_CollectAllCoinsTimeLimit = 10.0f;
+
         private static aMechSimMgr m_Instance = null;
         /// <summary>Returns an instance of SimMgr </summary>
         public static aMechSimMgr Inst { get { return m_Instance; } }
@@ -70,6 +80,8 @@ namespace Artimech
             m_CurrentState = AddState(new simMgrStart(this.gameObject), "simMgrStart");
 
             //<ArtiMechStates>
+            AddState(new simMgrPlayerWins(this.gameObject),"simMgrPlayerWins");
+            AddState(new simMgrCollectAllCoins(this.gameObject),"simMgrCollectAllCoins");
             AddState(new simMgrLoadWinLevel(this.gameObject),"simMgrLoadWinLevel");
             AddState(new simMgrKilledAll(this.gameObject),"simMgrKilledAll");
             AddState(new simMgrLoadSameLevel(this.gameObject),"simMgrLoadSameLevel");

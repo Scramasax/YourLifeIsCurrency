@@ -34,10 +34,10 @@ using UnityEngine.SceneManagement;
   <State>
     <alias>simMgrLoadSameLevel</alias>
     <comment></comment>
-    <posX>238</posX>
-    <posY>320</posY>
-    <sizeX>150</sizeX>
-    <sizeY>80</sizeY>
+    <posX>89</posX>
+    <posY>235</posY>
+    <sizeX>151</sizeX>
+    <sizeY>53</sizeY>
   </State>
 </stateMetaData>
 

@@ -33,10 +33,10 @@ using System.Collections.Generic;
   <State>
     <alias>simMgrUpdate</alias>
     <comment></comment>
-    <posX>234</posX>
-    <posY>40</posY>
-    <sizeX>150</sizeX>
-    <sizeY>80</sizeY>
+    <posX>211</posX>
+    <posY>45</posY>
+    <sizeX>124</sizeX>
+    <sizeY>36</sizeY>
   </State>
 </stateMetaData>
 

@@ -33,10 +33,10 @@ using System.Collections.Generic;
   <State>
     <alias>simMgrKilledAll</alias>
     <comment></comment>
-    <posX>466</posX>
-    <posY>41</posY>
-    <sizeX>150</sizeX>
-    <sizeY>80</sizeY>
+    <posX>318</posX>
+    <posY>124</posY>
+    <sizeX>158</sizeX>
+    <sizeY>44</sizeY>
   </State>
 </stateMetaData>
 
@@ -55,7 +55,7 @@ namespace Artimech
         public simMgrKilledAll(GameObject gameobject) : base (gameobject)
         {
             //<ArtiMechConditions>
-            m_ConditionalList.Add(new simMgrKilledAll_To_simMgrLoadWinLevel("simMgrLoadWinLevel"));
+            m_ConditionalList.Add(new simMgrKilledAll_To_simMgrCollectAllCoins("simMgrCollectAllCoins"));
         }
 
         /// <summary>
@@ -87,6 +87,7 @@ namespace Artimech
         /// </summary>
         public override void Enter()
         {
+            aMechSimMgr.Inst.m_YouKilledAllText.gameObject.SetActive(true);
             base.Enter();
         }
 
@@ -95,6 +96,7 @@ namespace Artimech
         /// </summary>
         public override void Exit()
         {
+            aMechSimMgr.Inst.m_YouKilledAllText.gameObject.SetActive(false);
             base.Exit();
         }
     }

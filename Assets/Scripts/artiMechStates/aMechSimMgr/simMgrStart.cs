@@ -35,8 +35,8 @@ using System.Collections.Generic;
     <comment></comment>
     <posX>20</posX>
     <posY>40</posY>
-    <sizeX>150</sizeX>
-    <sizeY>80</sizeY>
+    <sizeX>116</sizeX>
+    <sizeY>41</sizeY>
   </State>
 </stateMetaData>
 

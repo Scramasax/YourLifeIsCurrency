@@ -230,12 +230,16 @@
     <Compile Include="Assets\Scripts\artiMechStates\aMechPlayerController\playerControllerUpdate_To_playerControllerAttack.cs" />
     <Compile Include="Assets\Scripts\artiMechStates\aMechPlayerController\playerControllerUpdate_To_playerControllerIdle.cs" />
     <Compile Include="Assets\Scripts\artiMechStates\aMechSimMgr\aMechSimMgr.cs" />
+    <Compile Include="Assets\Scripts\artiMechStates\aMechSimMgr\simMgrCollectAllCoins.cs" />
+    <Compile Include="Assets\Scripts\artiMechStates\aMechSimMgr\simMgrCollectAllCoins_To_simMgrPlayerWins.cs" />
     <Compile Include="Assets\Scripts\artiMechStates\aMechSimMgr\simMgrKilledAll.cs" />
-    <Compile Include="Assets\Scripts\artiMechStates\aMechSimMgr\simMgrKilledAll_To_simMgrLoadWinLevel.cs" />
+    <Compile Include="Assets\Scripts\artiMechStates\aMechSimMgr\simMgrKilledAll_To_simMgrCollectAllCoins.cs" />
     <Compile Include="Assets\Scripts\artiMechStates\aMechSimMgr\simMgrLoadSameLevel.cs" />
     <Compile Include="Assets\Scripts\artiMechStates\aMechSimMgr\simMgrLoadWinLevel.cs" />
     <Compile Include="Assets\Scripts\artiMechStates\aMechSimMgr\simMgrPlayerDying.cs" />
     <Compile Include="Assets\Scripts\artiMechStates\aMechSimMgr\simMgrPlayerDying_To_simMgrLoadSameLevel.cs" />
+    <Compile Include="Assets\Scripts\artiMechStates\aMechSimMgr\simMgrPlayerWins.cs" />
+    <Compile Include="Assets\Scripts\artiMechStates\aMechSimMgr\simMgrPlayerWins_To_simMgrLoadWinLevel.cs" />
     <Compile Include="Assets\Scripts\artiMechStates\aMechSimMgr\simMgrStart.cs" />
     <Compile Include="Assets\Scripts\artiMechStates\aMechSimMgr\simMgrStart_To_simMgrUpdate.cs" />
     <Compile Include="Assets\Scripts\artiMechStates\aMechSimMgr\simMgrUpdate.cs" />
@@ -589,6 +593,7 @@
     <None Include="Assets\VRM\UniVRM\Resources\Shaders\VRMUnlitTexture.shader" />
     <None Include="Assets\VRM\MToon\MToon\Resources\Shaders\MToonSM4.cginc" />
     <None Include="Assets\VRM\UniVRM\Resources\Shaders\VRMUnlitCutout.shader" />
+    <None Include="Assets\StateMachine.txt" />
     <None Include="Assets\Scripts\Common\statemachine\stateEditor\artimech-config.xml" />
     <None Include="Assets\VRM\MToon\MToon\Resources\Shaders\MToon.shader" />
     <None Include="Assets\VRM\UniUnlit\Resources\UniUnlit.shader" />

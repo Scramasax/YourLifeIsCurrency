@@ -51,6 +51,7 @@ namespace Artimech
         // Use this for initialization
         new void Start()
         {
+            aMechSimMgr.Inst.EnemyList.Add(this);
             base.Start();
         }
 

@@ -19,6 +19,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 #region XML_DATA
 
@@ -33,10 +34,10 @@ using System.Collections.Generic;
   <State>
     <alias>simMgrLoadWinLevel</alias>
     <comment></comment>
-    <posX>468</posX>
-    <posY>177</posY>
-    <sizeX>150</sizeX>
-    <sizeY>80</sizeY>
+    <posX>315</posX>
+    <posY>451</posY>
+    <sizeX>164</sizeX>
+    <sizeY>49</sizeY>
   </State>
 </stateMetaData>
 
@@ -86,6 +87,7 @@ namespace Artimech
         /// </summary>
         public override void Enter()
         {
+            SceneManager.LoadScene(aMechSimMgr.Inst.m_WinLevel);
             base.Enter();
         }
 
