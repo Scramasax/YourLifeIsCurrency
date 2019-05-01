@@ -87,6 +87,7 @@ namespace Artimech
         /// </summary>
         public override void Enter()
         {
+            Cursor.visible = false;
             base.Enter();
         }
 

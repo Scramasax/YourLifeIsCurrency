@@ -131,7 +131,7 @@ namespace Artimech
          */
         void UpdateCameraRotation()
         {
-            if (Input.GetMouseButton(1))
+            //if (Input.GetMouseButton(1))
             {
                 aMechThirdPersonCam camScript = StateGameObject.GetComponent<aMechThirdPersonCam>();
                 camScript.m_CameraGoal.transform.RotateAround(camScript.m_TargetGoal.transform.position, Vector3.up, Time.deltaTime * Input.GetAxis("Mouse X") * camScript.m_CamRotationVelX);

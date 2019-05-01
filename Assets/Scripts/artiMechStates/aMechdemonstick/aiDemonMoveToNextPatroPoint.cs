@@ -66,11 +66,11 @@ namespace Artimech
         /// </summary>
         public override void Update()
         {
-            aMechdemonstick ai = StateGameObject.GetComponent<aMechdemonstick>();
+  /*          aMechdemonstick ai = StateGameObject.GetComponent<aMechdemonstick>();
             NavMeshAgent agent = StateGameObject.GetComponent<NavMeshAgent>();
             agent.isStopped = false;
             agent.speed = ai.m_WalkSpeed;
-            agent.SetDestination(ai.m_PatrolPoints[ai.CurrentPatrolIndex].transform.position);
+            agent.SetDestination(ai.m_PatrolPoints[ai.CurrentPatrolIndex].transform.position);*/
 
             //agent.SetDestination(ai.m_Target.transform.position);
             base.Update();
@@ -104,6 +104,12 @@ namespace Artimech
             ai.CurrentPatrolIndex += 1;
             if (ai.CurrentPatrolIndex >= ai.m_PatrolPoints.Length)
                 ai.CurrentPatrolIndex = 0;
+
+            NavMeshAgent agent = StateGameObject.GetComponent<NavMeshAgent>();
+            agent.isStopped = false;
+            agent.speed = ai.m_WalkSpeed;
+            agent.SetDestination(ai.m_PatrolPoints[ai.CurrentPatrolIndex].transform.position);
+
             base.Enter();
         }
 
